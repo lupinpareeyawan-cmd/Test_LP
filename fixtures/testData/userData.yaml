@@ -1,0 +1,13 @@
+loginSuccess:
+  username: "tomsmith"
+  password: "SuperSecretPassword!"
+
+loginFailIncorrectPassword:
+  username: "tomsmith21"
+  password: "Password!"
+
+loginFailUsernameNotFound:
+  username: "tomholland"
+  password: "Password!"
+
+

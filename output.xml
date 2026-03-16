@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.10.6 on darwin)" generated="20260313 16:53:33.762" rpa="false" schemaversion="2">
+<suite id="s1" name="testLogin" source="/Users/lupin/Desktop/LP/สมัครงาน/Ascend/QA_Ascend_Test_Pareeyawan/Test_No_3_Robot_Test_Login_Page/tests/testLogin.robot">
+<test id="s1-t1" name="Test01 Login success">
+<kw name="Open Login Page" library="loginPage">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${loginPage.url}</arg>
+<arg>${loginPage.browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20260313 16:53:33.858" level="INFO">Opening browser 'chrome' to base url 'https://the-internet.herokuapp.com/login'.</msg>
+<status status="PASS" starttime="20260313 16:53:33.857" endtime="20260313 16:53:38.190"/>
+</kw>
+<status status="PASS" starttime="20260313 16:53:33.857" endtime="20260313 16:53:38.190"/>
+</kw>
+<kw name="Verify System Display Login Page" library="loginPage">
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>${loginPage.url}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20260313 16:53:38.197" level="INFO">Current location is 'https://the-internet.herokuapp.com/login'.</msg>
+<status status="PASS" starttime="20260313 16:53:38.191" endtime="20260313 16:53:38.197"/>
+</kw>
+<status status="PASS" starttime="20260313 16:53:38.191" endtime="20260313 16:53:38.197"/>
+</kw>
+<kw name="Input Username" library="loginPage">
+<arg>${loginSuccess.username}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${loginPage.usernameTextInput}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260313 16:53:38.199" endtime="20260313 16:53:38.218"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${loginPage.usernameTextInput}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260313 16:53:38.218" level="INFO">Typing text 'tomsmith' into text field 'xpath=//input[@id="username"]'.</msg>
+<status status="PASS" starttime="20260313 16:53:38.218" endtime="20260313 16:53:38.296"/>
+</kw>
+<status status="PASS" starttime="20260313 16:53:38.198" endtime="20260313 16:53:38.296"/>
+</kw>
+<kw name="Input Password" library="loginPage">
+<arg>${loginSuccess.password}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${loginPage.passwordTextInput}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260313 16:53:38.297" endtime="20260313 16:53:38.305"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${loginPage.passwordTextInput}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260313 16:53:38.305" level="INFO">Typing text 'SuperSecretPassword!' into text field 'xpath=//input[@id="password"]'.</msg>
+<status status="PASS" starttime="20260313 16:53:38.305" endtime="20260313 16:53:38.333"/>
+</kw>
+<status status="PASS" starttime="20260313 16:53:38.296" endtime="20260313 16:53:38.333"/>
+</kw>
+<kw name="Click Login Button" library="loginPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${loginPage.loginButton}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260313 16:53:38.333" endtime="20260313 16:53:38.340"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${loginPage.loginButton}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20260313 16:53:38.340" level="INFO">Clicking button 'xpath=//button[@class="radius"]'.</msg>
+<status status="PASS" starttime="20260313 16:53:38.340" endtime="20260313 16:53:38.959"/>
+</kw>
+<status status="PASS" starttime="20260313 16:53:38.333" endtime="20260313 16:53:38.959"/>
+</kw>
+<kw name="Verify Login Success" library="loginPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${secureAreaPage.loginSuccessMessage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260313 16:53:38.959" endtime="20260313 16:53:38.969"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${secureAreaPage.loginSuccessMessage}</arg>
+<arg>You logged into a secure area!</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20260313 16:53:38.982" level="INFO">Element 'xpath=//div[@id="flash"]' contains text 'You logged into a secure area!'.</msg>
+<status status="PASS" starttime="20260313 16:53:38.970" endtime="20260313 16:53:38.982"/>
+</kw>
+<status status="PASS" starttime="20260313 16:53:38.959" endtime="20260313 16:53:38.982"/>
+</kw>
+<kw name="Click Logout Button" library="loginPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${secureAreaPage.logoutButton}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260313 16:53:38.983" endtime="20260313 16:53:38.994"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${secureAreaPage.logoutButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260313 16:53:38.994" level="INFO">Clicking element 'xpath=//a[contains(@class, "button")]'.</msg>
+<status status="PASS" starttime="20260313 16:53:38.994" endtime="20260313 16:53:39.579"/>
+</kw>
+<status status="PASS" starttime="20260313 16:53:38.983" endtime="20260313 16:53:39.579"/>
+</kw>
+<kw name="Verify Logout Success" library="loginPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${loginPage.logoutSuccessMessage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260313 16:53:39.580" endtime="20260313 16:53:39.597"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${loginPage.logoutSuccessMessage}</arg>
+<arg>You logged out of the secure area!</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20260313 16:53:39.604" level="INFO">Element 'xpath=//div[@id="flash"]' contains text 'You logged out of the secure area!'.</msg>
+<status status="PASS" starttime="20260313 16:53:39.597" endtime="20260313 16:53:39.604"/>
+</kw>
+<status status="PASS" starttime="20260313 16:53:39.579" endtime="20260313 16:53:39.604"/>
+</kw>
+<status status="PASS" starttime="20260313 16:53:33.857" endtime="20260313 16:53:39.604"/>
+</test>
+<test id="s1-t2" name="Test02 Login failed - Password incorrect">
+<kw name="Open Login Page" library="loginPage">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${loginPage.url}</arg>
+<arg>${loginPage.browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20260313 16:53:39.605" level="INFO">Opening browser 'chrome' to base url 'https://the-internet.herokuapp.com/login'.</msg>
+<status status="PASS" starttime="20260313 16:53:39.605" endtime="20260313 16:53:44.191"/>
+</kw>
+<status status="PASS" starttime="20260313 16:53:39.604" endtime="20260313 16:53:44.192"/>
+</kw>
+<kw name="Verify System Display Login Page" library="loginPage">
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>${loginPage.url}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20260313 16:53:44.201" level="INFO">Current location is 'https://the-internet.herokuapp.com/login'.</msg>
+<status status="PASS" starttime="20260313 16:53:44.194" endtime="20260313 16:53:44.201"/>
+</kw>
+<status status="PASS" starttime="20260313 16:53:44.193" endtime="20260313 16:53:44.201"/>
+</kw>
+<kw name="Input Username" library="loginPage">
+<arg>${loginFailIncorrectPassword.username}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${loginPage.usernameTextInput}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260313 16:53:44.202" endtime="20260313 16:53:44.219"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${loginPage.usernameTextInput}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260313 16:53:44.220" level="INFO">Typing text 'tomsmith21' into text field 'xpath=//input[@id="username"]'.</msg>
+<status status="PASS" starttime="20260313 16:53:44.219" endtime="20260313 16:53:44.304"/>
+</kw>
+<status status="PASS" starttime="20260313 16:53:44.201" endtime="20260313 16:53:44.304"/>
+</kw>
+<kw name="Input Password" library="loginPage">
+<arg>${loginFailIncorrectPassword.password}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${loginPage.passwordTextInput}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260313 16:53:44.305" endtime="20260313 16:53:44.313"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${loginPage.passwordTextInput}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260313 16:53:44.313" level="INFO">Typing text 'Password!' into text field 'xpath=//input[@id="password"]'.</msg>
+<status status="PASS" starttime="20260313 16:53:44.313" endtime="20260313 16:53:44.336"/>
+</kw>
+<status status="PASS" starttime="20260313 16:53:44.305" endtime="20260313 16:53:44.336"/>
+</kw>
+<kw name="Click Login Button" library="loginPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${loginPage.loginButton}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260313 16:53:44.337" endtime="20260313 16:53:44.342"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${loginPage.loginButton}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20260313 16:53:44.343" level="INFO">Clicking button 'xpath=//button[@class="radius"]'.</msg>
+<status status="PASS" starttime="20260313 16:53:44.342" endtime="20260313 16:53:44.940"/>
+</kw>
+<status status="PASS" starttime="20260313 16:53:44.337" endtime="20260313 16:53:44.940"/>
+</kw>
+<kw name="Verify Login Fail Password Incorrect" library="loginPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${loginPage.loginFailMessage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260313 16:53:44.940" endtime="20260313 16:53:44.950"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${loginPage.loginFailMessage}</arg>
+<arg>Your username is invalid!</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20260313 16:53:44.959" level="INFO">Element 'xpath=//div[@id="flash"]' contains text 'Your username is invalid!'.</msg>
+<status status="PASS" starttime="20260313 16:53:44.950" endtime="20260313 16:53:44.959"/>
+</kw>
+<status status="PASS" starttime="20260313 16:53:44.940" endtime="20260313 16:53:44.959"/>
+</kw>
+<status status="PASS" starttime="20260313 16:53:39.604" endtime="20260313 16:53:44.959"/>
+</test>
+<test id="s1-t3" name="Test03 Login failed - Username not found">
+<kw name="Open Login Page" library="loginPage">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${loginPage.url}</arg>
+<arg>${loginPage.browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20260313 16:53:44.959" level="INFO">Opening browser 'chrome' to base url 'https://the-internet.herokuapp.com/login'.</msg>
+<status status="PASS" starttime="20260313 16:53:44.959" endtime="20260313 16:53:49.318"/>
+</kw>
+<status status="PASS" starttime="20260313 16:53:44.959" endtime="20260313 16:53:49.319"/>
+</kw>
+<kw name="Verify System Display Login Page" library="loginPage">
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>${loginPage.url}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20260313 16:53:49.321" level="INFO">Current location is 'https://the-internet.herokuapp.com/login'.</msg>
+<status status="PASS" starttime="20260313 16:53:49.319" endtime="20260313 16:53:49.321"/>
+</kw>
+<status status="PASS" starttime="20260313 16:53:49.319" endtime="20260313 16:53:49.321"/>
+</kw>
+<kw name="Input Username" library="loginPage">
+<arg>${loginFailUsernameNotFound.username}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${loginPage.usernameTextInput}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260313 16:53:49.322" endtime="20260313 16:53:49.331"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${loginPage.usernameTextInput}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260313 16:53:49.331" level="INFO">Typing text 'tomholland' into text field 'xpath=//input[@id="username"]'.</msg>
+<status status="PASS" starttime="20260313 16:53:49.331" endtime="20260313 16:53:49.426"/>
+</kw>
+<status status="PASS" starttime="20260313 16:53:49.321" endtime="20260313 16:53:49.426"/>
+</kw>
+<kw name="Input Password" library="loginPage">
+<arg>${loginFailUsernameNotFound.password}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${loginPage.passwordTextInput}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260313 16:53:49.427" endtime="20260313 16:53:49.434"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${loginPage.passwordTextInput}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260313 16:53:49.435" level="INFO">Typing text 'Password!' into text field 'xpath=//input[@id="password"]'.</msg>
+<status status="PASS" starttime="20260313 16:53:49.435" endtime="20260313 16:53:49.459"/>
+</kw>
+<status status="PASS" starttime="20260313 16:53:49.426" endtime="20260313 16:53:49.459"/>
+</kw>
+<kw name="Click Login Button" library="loginPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${loginPage.loginButton}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260313 16:53:49.460" endtime="20260313 16:53:49.465"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${loginPage.loginButton}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20260313 16:53:49.465" level="INFO">Clicking button 'xpath=//button[@class="radius"]'.</msg>
+<status status="PASS" starttime="20260313 16:53:49.465" endtime="20260313 16:53:50.102"/>
+</kw>
+<status status="PASS" starttime="20260313 16:53:49.460" endtime="20260313 16:53:50.102"/>
+</kw>
+<kw name="Verify Login Fail Username Not Found" library="loginPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${loginPage.loginFailMessage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260313 16:53:50.103" endtime="20260313 16:53:50.113"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${loginPage.loginFailMessage}</arg>
+<arg>Your username is invalid!</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20260313 16:53:50.126" level="INFO">Element 'xpath=//div[@id="flash"]' contains text 'Your username is invalid!'.</msg>
+<status status="PASS" starttime="20260313 16:53:50.113" endtime="20260313 16:53:50.126"/>
+</kw>
+<status status="PASS" starttime="20260313 16:53:50.102" endtime="20260313 16:53:50.126"/>
+</kw>
+<status status="PASS" starttime="20260313 16:53:44.959" endtime="20260313 16:53:50.126"/>
+</test>
+<test id="s1-t4" name="Test04 Login passed - tel number">
+<kw name="Open Login Page" library="loginPage">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${loginPage.url}</arg>
+<arg>${loginPage.browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20260313 16:53:50.127" level="INFO">Opening browser 'chrome' to base url 'https://the-internet.herokuapp.com/login'.</msg>
+<status status="PASS" starttime="20260313 16:53:50.126" endtime="20260313 16:53:51.914"/>
+</kw>
+<status status="PASS" starttime="20260313 16:53:50.126" endtime="20260313 16:53:51.919"/>
+</kw>
+<kw name="Verify System Display Login Page" library="loginPage">
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>${loginPage.url}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20260313 16:53:54.499" level="INFO">Current location is 'https://the-internet.herokuapp.com/login'.</msg>
+<status status="PASS" starttime="20260313 16:53:51.922" endtime="20260313 16:53:54.500"/>
+</kw>
+<status status="PASS" starttime="20260313 16:53:51.920" endtime="20260313 16:53:54.500"/>
+</kw>
+<kw name="Input Username" library="loginPage">
+<arg>${loginSuccessTelNumber.username}</arg>
+<msg timestamp="20260313 16:53:54.500" level="FAIL">Resolving variable '${loginSuccessTelNumber.username}' failed: Variable '${loginSuccessTelNumber}' not found.</msg>
+<status status="FAIL" starttime="20260313 16:53:54.500" endtime="20260313 16:53:54.500"/>
+</kw>
+<kw name="Input Password" library="loginPage">
+<arg>${loginSuccessTelNumber.password}</arg>
+<status status="NOT RUN" starttime="20260313 16:53:54.500" endtime="20260313 16:53:54.501"/>
+</kw>
+<kw name="Click Login Button" library="loginPage">
+<status status="NOT RUN" starttime="20260313 16:53:54.501" endtime="20260313 16:53:54.501"/>
+</kw>
+<kw name="Verify Login Success" library="loginPage">
+<status status="NOT RUN" starttime="20260313 16:53:54.501" endtime="20260313 16:53:54.501"/>
+</kw>
+<status status="FAIL" starttime="20260313 16:53:50.126" endtime="20260313 16:53:54.501">Resolving variable '${loginSuccessTelNumber.username}' failed: Variable '${loginSuccessTelNumber}' not found.</status>
+</test>
+<status status="FAIL" starttime="20260313 16:53:33.762" endtime="20260313 16:53:54.501"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="1" skip="0" id="s1" name="testLogin">testLogin</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
