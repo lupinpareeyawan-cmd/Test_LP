@@ -10,4 +10,7 @@ loginFailUsernameNotFound:
   username: "tomholland"
   password: "Password!"
 
+loginSuccessTelNumber:
+  username: "tomsmith"
+  password: "SuperSecretPassword!"
 

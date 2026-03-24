@@ -1,10 +1,11 @@
 *** Variables ***
 ${loginPage.url}        https://the-internet.herokuapp.com/login
 ${loginPage.browser}    chrome
+${loginPage.browser_options}    add_argument("--headless"); add_argument("--no-sandbox"); add_argument("--disable-dev-shm-usage")
 
 *** Keywords ***
 Open Login Page
-    Open Browser    ${loginPage.url}    ${loginPage.browser}
+    Open Browser    ${loginPage.url}    ${loginPage.browser}    options=${loginPage.browser_options}
 
 Verify System Display Login Page
     Location Should Be    ${loginPage.url}
@@ -42,5 +43,4 @@ Verify Login Fail Username Not Found
 Verify Logout Success
     Wait Until Element Is Visible    ${loginPage.logoutSuccessMessage}
     Element Should Contain           ${loginPage.logoutSuccessMessage}    You logged out of the secure area!
-    
 
